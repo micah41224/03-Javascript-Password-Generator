@@ -22,7 +22,8 @@ function generatePassword() {
     10
   );
 
-
+/*Referenced activity 9 to construct these 2 "if" statements that prevent the user from entering the wrong size of password... 
+ would want to condense to 1 statement except that the user needs to see the reason why their input was rejected.*/
 if (passSize < 8) {
   alert("You must request at least 8 characters");
   return null;
@@ -32,6 +33,7 @@ if (passSize > 128) {
   alert("Your password must contain 128 characters or less");
   return null;
 }
+
 
 var containsLowerCase = confirm(
   "Click the OK button to include lowercase characters in your password"
@@ -51,20 +53,54 @@ var containsSymbols = confirm(
 
 }
 
+
+
+// Referenced activity 21 to help make array references.
 var allArrays = {
-  // Properties are made up of key-value pairs
-  name: upperCaseLetters,
-  age: "4.543 billion years",
-  moons: 1,
-  isPopulated: true,
-  population: "7.594 billion"
+  passSize: passSize,
+  lowerCaseLetters: lowerCaseLetters,
+  upperCaseLetters: upperCaseLetters,
+  numbers: numbers,
+  symbols: symbols
 };
 
 console.log(allArrays)
 
 
 
+//Possible framework for restricting what the function can pick randomly from the selected arrays:
 
+if (lowerCaseLetters === true && upperCaseLetters === false && numbers === false && symbols === false) {
+  passwordPossibilities = lowerCaseLetters;
+} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === false && symbols === false) {
+  passwordPossibilities = lowerCaseLetters, upperCaseLetters;
+} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === true && symbols === false) {
+  passwordPossibilities = lowerCaseLetters, upperCaseLetters, numbers;
+} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === true && symbols === true) {
+passwordPossibilities = lowerCaseLetters, upperCaseLetters, numbers, symbols;
+} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === true && symbols === true) {
+  passwordPossibilities = upperCaseLetters, numbers, symbols;
+} else if (lowerCaseLetters === false && upperCaseLetters === false && numbers === true && symbols === true) {
+  passwordPossibilities = numbers, symbols;
+} else if (lowerCaseLetters === false && upperCaseLetters === false && numbers === false && symbols === true) {
+  passwordPossibilities = symbols;
+} else if (lowerCaseLetters === false && upperCaseLetters === false && numbers === false && symbols === true) {
+  passwordPossibilities = numbers;
+} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === true && symbols === false) {
+  passwordPossibilties = upperCaseLetters, numbers;
+} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === false && symbols === true) {
+  passwordPossibilities = upperCaseLetters, symbols;
+} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === false && symbols === false) {
+  passwordPossibilities = upperCaseLetters;
+} else if (lowerCaseLetters === true && upperCaseLetters === false && numbers === true && symbols === true) {
+  passwordPossibilities = lowerCaseLetters, numbers, symbols;
+} else if (lowerCaseLetters === true && upperCaseLetters === false && numbers === true && symbols === false) {
+  passwordPossibilities = lowerCaseLetters, numbers;
+} else if (lowerCaseLetters === true && upperCaseLetters === false && numbers === false && symbols === true) {
+  passwordPossibilities = lowerCaseLetters, symbols;
+} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === false && symbols === true) {
+  passwordPossibilities = lowerCaseLetters, upperCaseLetters, symbols;
+}
 
 
 
