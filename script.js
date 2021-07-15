@@ -86,67 +86,25 @@ function buildArray(){
 
 buildArray()
 console.log(passwordPossibilities);
+
+function randomizePassword() {
+  var passwordText = "";
+  for (var i = 0; i < passSize; i++)
+    passwordText += passwordPossibilities.charAt(Math.floor(Math.random() * passSize));
+
+    console.log(passwordText)
+    return passwordText;
 }
 
-var passwordPossibilities =[];
+randomizePassword()
+return randomizePassword("");
 
-/*
-function generatePassword() {
+
+
 
 }
-*/
-
-/*
-
-// Referenced activity 21 to help make array references.
-var allArrays = {
-  passSize: passSize,
-  lowerCaseLetters: lowerCaseLetters,
-  upperCaseLetters: upperCaseLetters,
-  numbers: numbers,
-  symbols: symbols
-};
-
-console.log(allArrays)
 
 
-
-//Possible framework for restricting what the function can pick randomly from the selected arrays:
-
-
-if (lowerCaseLetters === true && upperCaseLetters === false && numbers === false && symbols === false) {
-  passwordPossibilities = lowerCaseLetters;
-} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === false && symbols === false) {
-  passwordPossibilities = lowerCaseLetters, upperCaseLetters;
-} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === true && symbols === false) {
-  passwordPossibilities = lowerCaseLetters, upperCaseLetters, numbers;
-} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === true && symbols === true) {
-passwordPossibilities = lowerCaseLetters, upperCaseLetters, numbers, symbols;
-} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === true && symbols === true) {
-  passwordPossibilities = upperCaseLetters, numbers, symbols;
-} else if (lowerCaseLetters === false && upperCaseLetters === false && numbers === true && symbols === true) {
-  passwordPossibilities = numbers, symbols;
-} else if (lowerCaseLetters === false && upperCaseLetters === false && numbers === false && symbols === true) {
-  passwordPossibilities = symbols;
-} else if (lowerCaseLetters === false && upperCaseLetters === false && numbers === false && symbols === true) {
-  passwordPossibilities = numbers;
-} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === true && symbols === false) {
-  passwordPossibilties = upperCaseLetters, numbers;
-} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === false && symbols === true) {
-  passwordPossibilities = upperCaseLetters, symbols;
-} else if (lowerCaseLetters === false && upperCaseLetters === true && numbers === false && symbols === false) {
-  passwordPossibilities = upperCaseLetters;
-} else if (lowerCaseLetters === true && upperCaseLetters === false && numbers === true && symbols === true) {
-  passwordPossibilities = lowerCaseLetters, numbers, symbols;
-} else if (lowerCaseLetters === true && upperCaseLetters === false && numbers === true && symbols === false) {
-  passwordPossibilities = lowerCaseLetters, numbers;
-} else if (lowerCaseLetters === true && upperCaseLetters === false && numbers === false && symbols === true) {
-  passwordPossibilities = lowerCaseLetters, symbols;
-} else if (lowerCaseLetters === true && upperCaseLetters === true && numbers === false && symbols === true) {
-  passwordPossibilities = lowerCaseLetters, upperCaseLetters, symbols;
-}
-
-*/
 
 
 // Assignment Code
