@@ -51,9 +51,16 @@ var containsSymbols = confirm(
 
 }
 
+var allArrays = {
+  // Properties are made up of key-value pairs
+  name: upperCaseLetters,
+  age: "4.543 billion years",
+  moons: 1,
+  isPopulated: true,
+  population: "7.594 billion"
+};
 
-
-
+console.log(allArrays)
 
 
 
