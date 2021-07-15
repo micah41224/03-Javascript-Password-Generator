@@ -85,14 +85,14 @@ function buildArray(){
 }
 
 buildArray()
-console.log(passwordPossibilities);
+//console.log(passwordPossibilities);
 
 function randomizePassword() {
   var passwordText = "";
   for (var i = 0; i < passSize; i++)
     passwordText += passwordPossibilities.charAt(Math.floor(Math.random() * passSize));
 
-    console.log(passwordText)
+    //console.log(passwordText)
     return passwordText;
 }
 
